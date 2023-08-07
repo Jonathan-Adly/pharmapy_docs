@@ -1,0 +1,13 @@
+[data-md-color-scheme="pharmapy"] {
+    --md-primary-fg-color:        #CB0C9F;
+    --md-primary-fg-color--light: #8392AB;
+    --md-primary-fg-color--dark:  #17C1E8;
+  }
+  
+  .md-grid {
+    max-width: 1400px; 
+  }
+  
+  .md-sidebar-primary {
+    width: 1000px
+  }
