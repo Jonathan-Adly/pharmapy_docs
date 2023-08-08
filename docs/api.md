@@ -18,7 +18,7 @@ hide:
 
     result = fda_helper.drug_information(drug, route)
 
-    print(result)
+    print(result) # 
 
     ```
 
@@ -36,7 +36,7 @@ hide:
 
     result = fda_helper.drug_field(drug, route, field)
 
-    print(result)
+    print(result) # "Ciprofloxacin Ciprofloxacin CIPROFLOXACIN..."
     ```
 
 </ul>
@@ -54,14 +54,15 @@ hide:
 
     result = nadac.get_from_ndc_list(ndc_list)
 
-    print(results)
+    print(results) # [{'ndc_description': '8HR ARTHRITIS PAIN ER 650 MG', 'ndc': '46122062978', 'nadac_per_unit': '0.06987', 'pricing_unit': 'EA', 'as_of_date': '2022-12-28'}, {'ndc_description': '12HR NASAL DECONGEST ER 120 MG', 'ndc': '24385005452', 'nadac_per_unit': '0.28255', 'pricing_unit': 'EA', 'as_of_date': '2022-12-28'}]
+
 
     ```
 
 <br>
 <li> The <strong>get_avg_from_ndc_description(drug_name, exact_match=False, start_with=False)</strong> function takes a drug name and returns the average NADAC per unit for that drug
     across all ndcs that match the drug name on the latest nadac files.
-    default matching behavir is "contain", but you can also match on starts_with (by setting starts_with to True) or exact (by setting exact_match to True). </li>
+    default matching behavior is "contain", but you can also match on starts_with (by setting starts_with to True) or exact (by setting exact_match to True). </li>
 
     ``` py
     from PharmaPy import nadac
@@ -87,7 +88,7 @@ hide:
 
     result = ner.predict(text)
 
-    print(result) #['oxycode', 'prednisone', 'benazepril']
+    print(result) #['oxycodone', 'prednisone', 'benazepril']
 
     ```
 
@@ -107,11 +108,11 @@ hide:
 
     result = rxnorm.get_all_formulations(drug)
 
-    print(result)
+    print(result) # ['atorvastatin 10 MG / ezetimibe 10 MG Oral Tablet [Lypqozet]', 'atorvastatin 20 MG / ezetimibe 10 MG Oral Tablet [Lypqozet]', ...]
 
     ```
 </li>
-
+<br>
 <li> The <strong>get_all_matching_drug(partial_drug=None)</strong> function outputs a list of all drugs in the RxNorm API. If <i>partial_drug</i> is provided, it filters the list to only names that contain the given partial name.</li>
     ``` py
     from PharmaPy import rxnorm
@@ -122,7 +123,7 @@ hide:
 
     ```
 </li>
-
+<br>
 <li> The <strong>get_rxcui_by_ndc(drug_ndc)</strong> function takes any NDC-10 code (with or without hyphens) or NDC-11 code (with hyphens only) and returns the RxCUI numbers that can be used for other RxNorm functions. Some RxCUIs may return multiple RxCUI codes. </li>
     
     ``` py
@@ -136,7 +137,7 @@ hide:
 
     ```
 </li>
-
+<br>
 <li> The <strong>get_rxcui_by_drug(drug)</strong> function takes a drug (input format as drug name, dose, dosage form; ex. lisinopril 20mg tablet or lisinopril
     20 mg tablet) And returns a list of RxCUIs that can be used for other functions.</li>
     
@@ -151,7 +152,7 @@ hide:
 
     ```
 </li>
-
+<br>
 <li> The <strong>get_rxnorm_name(rxcui)</strong> function takes the RxCUI and returns a drug name and dosage. </li>
     
     ``` py
@@ -165,8 +166,7 @@ hide:
 
     ```
 </li>
-
-
+<br>
 <li> The <strong>get_drug_class_by_name(drug_name, exact_match=False)</strong> function returns the class of a drug given its name. </li>
     
     ``` py
@@ -180,8 +180,7 @@ hide:
 
     ```
 </li>
-
-
+<br>
 <li> The <strong>get_drug_class_by_ndc(ndc)</strong> function returns the class of a drug given its ndc. </li>
     
     ``` py
@@ -195,7 +194,7 @@ hide:
 
     ```
 </li>
-
+<br>
 <li> The <strong>get_fda_rxcuis(drug_name)</strong> returns a list of dicionaries of the keys of all the drug names with corresponding rxcui values, given that the drug exists in the FDA API. </li>
     
     ``` py
